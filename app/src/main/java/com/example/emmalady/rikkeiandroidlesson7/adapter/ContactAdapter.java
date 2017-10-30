@@ -1,5 +1,6 @@
 package com.example.emmalady.rikkeiandroidlesson7.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.emmalady.rikkeiandroidlesson7.R;
 import com.example.emmalady.rikkeiandroidlesson7.activity.MainActivity;
@@ -117,12 +119,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.viewHold
                     else {
                         mCheckedBox.setChecked(true);
                         userContact.get(adapterPosition).setChecked(true);
-
-//                        user = userContact.get(adapterPosition);
-//                        String name = user.getContactName();
-//                        int number = user.getContactNumber();
-//                        //int id = user.getId();
-//                        //chooseContact.add(new Contact(name, number));
                     }
                 }
             });
@@ -140,6 +136,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.viewHold
                 int id = user.getId();
                 DataHandler dataHandler = new DataHandler(context);
                 dataHandler.deleteData(id);
+                Toast.makeText(context, "THÀNH CÔNG", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(context, "KHÔNG THÀNH CÔNG", Toast.LENGTH_SHORT).show();
             }
         }
     }
