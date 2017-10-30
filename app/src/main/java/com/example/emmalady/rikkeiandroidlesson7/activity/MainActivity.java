@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity{
                     public void onClick(View v) {
                         DeleteData deleteData = new DeleteData(id);
                         deleteData.execute();
+                        Intent i = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(i);
                     }
                 });
                 btSdSave.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +92,8 @@ public class MainActivity extends AppCompatActivity{
                         int number = Integer.parseInt(etContactNumberShow.getText().toString());
                         UpdateData updateData = new UpdateData(id, name, number);
                         updateData.execute();
+                        Intent i = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(i);
                     }
                 });
             }
