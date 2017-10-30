@@ -84,8 +84,8 @@ public class DataHandler extends SQLiteOpenHelper {
     public boolean updateData(int id, String name, int number){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "UPDATE " + DATABASE_TABLE_NAME +" SET id = " + id +
-                " contactName = " + name +
-                " contactNumber " + number +
+                " ,contactName = " + name +
+                " ,contactNumber " + number +
                 " WHERE id = " + id ;
         db.execSQL(query);
         return true;
